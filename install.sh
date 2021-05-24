@@ -497,7 +497,7 @@ install_type() {
     asuswrt-merlin)
         echo "merlin"
         ;;
-    edgeos|synology|clear-linux-os|solus|openbsd|netbsd|overthebox)
+    edgeos|synology|clear-linux-os|solus|openbsd|netbsd|overthebox|openmptcprouter)
         echo "bin"
         ;;
     ddwrt)
@@ -829,7 +829,7 @@ detect_os() {
                 fi
                 echo "$dist"; return 0
                 ;;
-            debian|ubuntu|elementary|raspbian|centos|fedora|rhel|arch|manjaro|openwrt|clear-linux-os|linuxmint|opensuse-tumbleweed|opensuse-leap|opensuse|solus|pop|neon|overthebox|sparky|vyos|void)
+            debian|ubuntu|elementary|raspbian|centos|fedora|rhel|arch|manjaro|openwrt|clear-linux-os|linuxmint|opensuse-tumbleweed|opensuse-leap|opensuse|solus|pop|neon|overthebox|openmptcprouter|sparky|vyos|void)
                 echo "$dist"; return 0
                 ;;
             esac
@@ -875,7 +875,7 @@ detect_os() {
 
 guess_host_type() {
     case $OS in
-    pfsense|opnsense|openwrt|asuswrt-merlin|edgeos|ddwrt|synology|overthebox|ubios)
+    pfsense|opnsense|openwrt|asuswrt-merlin|edgeos|ddwrt|synology|overthebox|openmptcprouter|ubios)
         echo "router"
         ;;
     darwin)
@@ -916,7 +916,7 @@ bin_location() {
     centos|fedora|rhel|debian|ubuntu|elementary|raspbian|arch|manjaro|clear-linux-os|linuxmint|opensuse-tumbleweed|opensuse-leap|opensuse|solus|pop|neon|sparky|vyos|void)
         echo "/usr/bin/nextdns"
         ;;
-    openwrt|overthebox)
+    openwrt|overthebox|openmptcprouter)
         echo "/usr/sbin/nextdns"
         ;;
     darwin|synology)
